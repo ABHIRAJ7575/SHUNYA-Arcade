@@ -3,7 +3,7 @@
 
 #### Welcome to SHUNYA Arcade, the "OG" of all-in-one web consoles. This isn't your average "I learned HTML today" project. This is a high-octane, Obsidian Neon themed, full-screen experience built for the legends who appreciate clean code and smooth animations.
 
-Forget those heavy frameworks that take 3 business days to load. This is Pure Vanilla JS—raw, fast, and 100% "Made in India" logic.
+#### Forget those heavy frameworks that take 3 business days to load. This is Pure Vanilla JS—raw, fast, and 100% "Made in India" logic.
 ## 🔗 Live Demo
 
 Stop reading and start playing: 👉 [DEPLOYED PROJECT LINK HERE] (Note: If the link doesn't work, don't DM me, check your internet first. 📶)
