@@ -118,8 +118,7 @@ LinkedIn: https://www.linkedin.com/in/abhiraj-dixit-6aa386313/ — For when I ne
 Portfolio: https://portfolio-dixit.vercel.app/ — More polished than my actual code
 
 
-<div align="center">
- 
+
 "Made with ❤️, JavaScript, and Desperation" 🎮
 Proving that you don't need a 6-month bootcamp to build cool stuff.
 Jai Shree RAM 🚩
