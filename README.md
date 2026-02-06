@@ -112,9 +112,8 @@ Give credit to the AI-Human Jugalbandi that made this possible. 🙏
 ## Let's Connect (Networking, But Make It Fun)
 
 GitHub: https://github.com/ABHIRAJ7575 — Where I pretend I commit regularly
-</div>
 LinkedIn: https://www.linkedin.com/in/abhiraj-dixit-6aa386313/ — For when I need to look professional                                                            
- </div>div <br>
+ </div> <br>
 Portfolio: https://portfolio-dixit.vercel.app/ — More polished than my actual code
 
 
