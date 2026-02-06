@@ -1,6 +1,6 @@
 # SHUNYA Arcade (शून्य)
 
-#### "Because 'Zero' was invented in India, and so was this project during office hours."
+#### "Because 'Zero' was invented in India, and so was this project during free hours."
 
 
 ##  What is This Masterpiece?
@@ -22,8 +22,7 @@ Agar link nahi khula, toh pehle apna Jio recharge karwa le bhai. 📶
 ## The Fantastic Four (Games That'll Make You Miss Your Meetings)
 🧩 Block Puzzle — The "Bade Bhaiya"
 Logic-based number merging that's harder than explaining to your dad why you need a MacBook for coding. It's like Tetris took JEE coaching.
-🔢 2048 — The "Chhota Recharge"
-Slide tiles, merge numbers, question your life choices when stuck at 512. More addictive than scrolling Instagram at 2 AM.
+🦖 Dino — The "BSNL" Special > A tribute to every time the internet let us down. Faster than a delivery guy reaching your house when you choose 'Cash on Delivery.'
 🐍 Snake — The "Nagmani" Edition
 Smooth 60fps neon snake that moves faster than your HR replies to leave requests. No lag, just pure dhishoom dhishoom gameplay.
 ❌ Tic-Tac-Toe — The "Timepass Supreme"
