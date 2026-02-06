@@ -43,7 +43,7 @@ GamePC (Chad Mode)Mobile (Normie Mode)Panic ButtonAll GamesEsc — Jab boss aa j
 
 ## Installation (Isse Zyada Easy Kuch Nahi)
 ### bash# Step 1: Clone karo (Ctrl+C Ctrl+V nahi, Git use karo)
-git clone https://github.com/your-username/shunya-arcade.git
+git clone https://github.com/ABHIRAJ7575/shunya-arcade.git
 
 ### Step 2: Folder mein ghuso
 cd shunya-arcade
@@ -119,9 +119,10 @@ Portfolio:https://portfolio-dixit.vercel.app/ — More polished than my actual c
 </div>
 
 <div align="center">
+ 
 "Made with ❤️, JavaScript, and Desperation" 🎮
 Proving that you don't need a 6-month bootcamp to build cool stuff.
-Jai Shree RAM of Clean Code 🚩
+Jai Shree RAM 🚩
 
 ## ⭐ Star this repo if you:
 
