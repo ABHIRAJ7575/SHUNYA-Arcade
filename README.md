@@ -112,7 +112,7 @@ Give credit to the AI-Human Jugalbandi that made this possible. 🙏
 ## Let's Connect (Networking, But Make It Fun)
 
 GitHub: https://github.com/ABHIRAJ7575 — Where I pretend I commit regularly
- </div> <br>
+
 LinkedIn: https://www.linkedin.com/in/abhiraj-dixit-6aa386313/ — For when I need to look professional                                                            
 
 
