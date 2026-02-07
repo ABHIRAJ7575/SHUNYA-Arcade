@@ -20,13 +20,16 @@ Agar link nahi khula, toh pehle apna Jio recharge karwa le bhai. 📶
 
 
 ## The Fantastic Four (Games That'll Make You Miss Your Meetings)
-🧩 Block Puzzle — The "Bade Bhaiya"
-Logic-based number merging that's harder than explaining to your dad why you need a MacBook for coding. It's like Tetris took JEE coaching.
+🃏 Memory Match — The "Jodi" Game Find the pairs before your brain betrays you. It’s like trying to remember where you parked your bike in a crowded market—pure chaos and high stakes.
+
 🦖 Dino — The "BSNL" Special > A tribute to every time the internet let us down. Faster than a delivery guy reaching your house when you choose 'Cash on Delivery.'
+
 🐍 Snake — The "Nagmani" Edition
 Smooth 60fps neon snake that moves faster than your HR replies to leave requests. No lag, just pure dhishoom dhishoom gameplay.
+
 ❌ Tic-Tac-Toe — The "Timepass Supreme"
 The OG classroom game, now in digital format. Perfect for when you're pretending to work in a Zoom meeting with camera off.
+
 
 ## ✨ Features (Kyun Ki Main Toh Aisa Hi Hoon)
 ✅ Obsidian Neon UI — So premium, your friends will ask "bhai template kahan se liya?"
