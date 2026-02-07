@@ -20,7 +20,7 @@ Agar link nahi khula, toh pehle apna Jio recharge karwa le bhai. 📶
 
 
 ## The Fantastic Four (Games That'll Make You Miss Your Meetings)
-🃏 Memory Match — The "Jodi" Game Find the pairs before your brain betrays you. It’s like trying to remember where you parked your bike in a crowded market—pure chaos and high stakes.
+🔨 Whack-a-Mole — The "Tappa" Edition Test your reflexes. It's like trying to catch a mosquito in the middle of the night—frustrating, fast, and satisfying when you finally hit it.
 
 🦖 Dino — The "BSNL" Special > A tribute to every time the internet let us down. Faster than a delivery guy reaching your house when you choose 'Cash on Delivery.'
 
