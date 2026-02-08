@@ -39,7 +39,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
     pointer-events: none;
@@ -102,16 +102,30 @@ body::before {
 }
 
 @keyframes fadeInOut {
-    0%, 100% { opacity: 0; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1); }
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 /* ===== LOBBY ===== */
@@ -144,8 +158,15 @@ body::before {
 }
 
 @keyframes titleFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .subtitle {
@@ -249,6 +270,7 @@ body::before {
         opacity: 0;
         transform: translateY(30px) scale(0.95);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -312,12 +334,12 @@ body::before {
     .arcade-title {
         font-size: 2.8rem;
     }
-    
+
     .game-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .game-card {
         padding: 2rem;
     }
@@ -404,9 +426,44 @@ body::before {
     animation: matchPulse 0.5s ease;
 }
 
+/* Memory Match Animations */
 @keyframes matchPulse {
-    0%, 100% { transform: rotateY(180deg) scale(1); }
-    50% { transform: rotateY(180deg) scale(1.1); }
+    0% {
+        transform: rotateY(180deg) scale(1);
+        box-shadow: 0 0 10px var(--success);
+    }
+
+    50% {
+        transform: rotateY(180deg) scale(1.1);
+        box-shadow: 0 0 30px var(--success);
+    }
+
+    100% {
+        transform: rotateY(180deg) scale(1);
+        box-shadow: 0 0 10px var(--success);
+    }
+}
+
+.mm-card.shake-mismatch .mm-card-back {
+    animation: shakeRed 0.4s ease-in-out;
+    border-color: var(--danger);
+    background: linear-gradient(135deg, var(--danger) 0%, var(--warning) 100%);
+}
+
+@keyframes shakeRed {
+
+    0%,
+    100% {
+        transform: rotateY(180deg) translateX(0);
+    }
+
+    25% {
+        transform: rotateY(180deg) translateX(-5px);
+    }
+
+    75% {
+        transform: rotateY(180deg) translateX(5px);
+    }
 }
 
 .mm-reset-btn {
@@ -430,98 +487,7 @@ body::before {
     box-shadow: 0 10px 30px rgba(255, 211, 61, 0.4);
 }
 
-/* ===== WHACK-A-MOLE STYLES ===== */
-.wam-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem 0;
-}
 
-.wam-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 140px);
-    grid-template-rows: repeat(3, 140px);
-    gap: 20px;
-    padding: 20px;
-    background: rgba(30, 39, 73, 0.5);
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-}
-
-.wam-hole {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    background: linear-gradient(135deg, rgba(108, 92, 231, 0.2) 0%, rgba(0, 217, 255, 0.2) 100%);
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.wam-hole:hover {
-    border-color: var(--warning);
-    box-shadow: 0 5px 20px rgba(255, 211, 61, 0.3);
-}
-
-.wam-mole {
-    position: absolute;
-    bottom: -100%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 4rem;
-    transition: bottom 0.3s ease;
-    user-select: none;
-    pointer-events: none;
-}
-
-.wam-hole.active .wam-mole {
-    bottom: 20%;
-    animation: moleWiggle 0.5s ease infinite;
-}
-
-.wam-hole.whacked {
-    animation: holePulse 0.2s ease;
-}
-
-@keyframes moleWiggle {
-    0%, 100% { transform: translateX(-50%) rotate(-5deg); }
-    50% { transform: translateX(-50%) rotate(5deg); }
-}
-
-@keyframes holePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-.wam-start-btn {
-    background: linear-gradient(135deg, rgba(108, 92, 231, 0.2) 0%, rgba(0, 217, 255, 0.2) 100%);
-    border: 2px solid var(--success);
-    color: var(--text-primary);
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    border-radius: 15px;
-    cursor: pointer;
-    margin: 1rem;
-    transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    box-shadow: 0 5px 20px rgba(0, 217, 255, 0.2);
-}
-
-.wam-start-btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, var(--success) 0%, var(--accent-secondary) 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
-}
-
-.wam-start-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
 
 /* ===== BLOCK PUZZLE STYLES (LEGACY - NOT USED) ===== */
 .bp-container {
@@ -570,9 +536,17 @@ body::before {
 }
 
 @keyframes cellPop {
-    0% { transform: scale(0.8); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .bp-pieces-container {
@@ -659,8 +633,19 @@ body::before {
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
     color: var(--text-primary);
+}
+
+.ttt-cell.cell-x {
+    color: #00d9ff;
+    /* Cyan for X */
+    text-shadow: 0 0 10px #00d9ff;
+}
+
+.ttt-cell.cell-o {
+    color: #6c5ce7;
+    /* Purple for O */
+    text-shadow: 0 0 10px #6c5ce7;
 }
 
 .ttt-cell:hover:not(.filled) {
@@ -679,8 +664,15 @@ body::before {
 }
 
 @keyframes winPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .ttt-status {
@@ -781,64 +773,51 @@ body::before {
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .wam-grid {
-        grid-template-columns: repeat(3, 90px);
-        grid-template-rows: repeat(3, 90px);
-        gap: 12px;
-        padding: 15px;
-    }
-    
-    .wam-hole {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .wam-mole {
-        font-size: 2.5rem;
-    }
-    
+
+
     .mm-grid {
         grid-template-columns: repeat(4, 70px);
         grid-template-rows: repeat(4, 70px);
         gap: 10px;
     }
-    
+
     .mm-card-front,
     .mm-card-back {
         font-size: 2rem;
         border-radius: 10px;
     }
-    
+
     .bp-grid {
         grid-template-columns: repeat(8, 38px);
         grid-template-rows: repeat(8, 38px);
         gap: 3px;
         padding: 8px;
     }
-    
+
     .bp-piece-cell {
         width: 22px;
         height: 22px;
     }
-    
+
     .bp-piece-grid {
         gap: 2px;
     }
-    
+
     .bp-pieces-container {
         gap: 1rem;
     }
-    
+
     .ttt-board {
         grid-template-columns: repeat(3, 80px);
         grid-template-rows: repeat(3, 80px);
     }
-    
+
     .ttt-cell {
         font-size: 2.5rem;
     }
-    
-    #dino-canvas, #snake-canvas {
+
+    #dino-canvas,
+    #snake-canvas {
         max-width: 100%;
         height: auto;
     }
@@ -851,10 +830,12 @@ body::before {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.5);
     }
+
     50% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.2);
     }
+
     100% {
         opacity: 0;
         transform: translate(-50%, -50%) scale(1);
@@ -862,45 +843,31 @@ body::before {
 }
 
 /* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
 .footer {
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    bottom: 20px;
     left: 0;
-    right: 0;
+    width: 100%;
     text-align: center;
-    padding: 1.2rem;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    background: rgba(20, 25, 45, 0.75);
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 5px;
     text-transform: uppercase;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    z-index: 1000;
+    pointer-events: none;
+    /* Let clicks pass through if needed */
 }
 
-.footer::before {
-    content: '✨ ';
-    color: rgba(192, 192, 192, 0.6);
-}
-
-.footer::after {
-    content: ' ✨';
-    color: rgba(192, 192, 192, 0.6);
-}
-
-.footer span {
-    background: linear-gradient(135deg, 
-        #c0c0c0 0%,
-        #e8e8e8 25%, 
-        #a8a8a8 50%, 
-        #d4d4d4 75%, 
-        #b8b8b8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
-    filter: drop-shadow(0 0 3px rgba(200, 200, 200, 0.3));
+/* Remove old footer styles if any conflict */
+.footer span.neon-text,
+.footer span.boss-badge {
+    /* Reset these if you want pure simple text, but user asked for "Made by Abhiraj Dixit" with specific style */
+    /* The user prompt said: Content: "MADE BY ABHIRAJ DIXIT" style: ... */
+    /* It did NOT explicitly ask to keep the neon/boss badge from the previous step, but "Classy Footer" usually implies cleaner. */
+    /* I will assume the previous "Boss" badge is to be removed as per "Remove the old footer" instruction. */
+    display: none;
 }

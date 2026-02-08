@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHUNYA Arcade (शून्य)</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
@@ -24,26 +26,27 @@
             <h1 class="arcade-title">SHUNYA Arcade</h1>
             <p class="subtitle">शून्य</p>
         </div>
-        
+
         <div class="game-grid">
             <div class="game-card" data-game="memory-match">
                 <div class="card-glow"></div>
                 <h2>Memory Match</h2>
-                <p>The "Jodi" Game 🃏</p>
+                <p>The "Jodi" Game</p>
             </div>
-            
+
+
             <div class="game-card" data-game="tic-tac-toe">
                 <div class="card-glow"></div>
                 <h2>Tic-Tac-Toe</h2>
                 <p>Classic Strategy</p>
             </div>
-            
+
             <div class="game-card" data-game="dino">
                 <div class="card-glow"></div>
                 <h2>Dino Run</h2>
                 <p>Chrome Classic</p>
             </div>
-            
+
             <div class="game-card" data-game="snake">
                 <div class="card-glow"></div>
                 <h2>Snake</h2>
@@ -53,23 +56,24 @@
     </div>
 
     <!-- Game Containers -->
-    <div id="block-puzzle-game" class="game-container hidden"></div>
+    <div id="memory-match-game" class="game-container hidden"></div>
     <div id="tic-tac-toe-game" class="game-container hidden"></div>
     <div id="dino-game" class="game-container hidden"></div>
     <div id="snake-game" class="game-container hidden"></div>
 
     <!-- Footer -->
-    <footer class="footer">Made by <span>Abhiraj Dixit</span></footer>
+    <footer class="footer">MADE BY ABHIRAJ DIXIT</footer>
 
     <script src="js/viewport-manager.js"></script>
     <script src="js/sound-controller.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/background.js"></script>
     <script src="js/state-manager.js"></script>
-    <script src="js/games/block-puzzle.js"></script>
+    <script src="js/games/memory-match.js"></script>
     <script src="js/games/tic-tac-toe.js"></script>
     <script src="js/games/dino.js"></script>
     <script src="js/games/snake.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -58,11 +58,12 @@ class ArcadeApp {
 
         // Initialize game
         this.currentGame = gameName;
-        
-        switch(gameName) {
-            case 'whack-a-mole':
-                this.currentGameInstance = new WhackAMole(container);
+
+        switch (gameName) {
+            case 'memory-match':
+                this.currentGameInstance = new MemoryMatch(container);
                 break;
+
             case 'tic-tac-toe':
                 this.currentGameInstance = new TicTacToe(container);
                 break;
@@ -89,7 +90,7 @@ class ArcadeApp {
 
         // Show lobby
         document.getElementById('lobby').classList.remove('hidden');
-        
+
         this.currentGame = null;
         this.currentGameInstance = null;
         soundController.playClick();

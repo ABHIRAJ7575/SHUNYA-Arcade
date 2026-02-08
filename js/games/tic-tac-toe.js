@@ -1,4 +1,4 @@
-// Tic-Tac-Toe Game
+// Tic-Tac-Toe Game (Local PvP)
 class TicTacToe {
     constructor(container) {
         this.container = container;
@@ -14,14 +14,16 @@ class TicTacToe {
     }
 
     render() {
-        const stats = stateManager.getGameState('ticTacToe');
+        const stats = stateManager.getGameState('ticTacToePvP');
         this.container.innerHTML = `
             <div class="game-header">
-                <h2 class="game-title">Tic-Tac-Toe</h2>
-                <div class="game-score">W: ${stats.wins || 0} | L: ${stats.losses || 0} | D: ${stats.draws || 0}</div>
+                <h2 class="game-title">Tic-Tac-Toe <span style="font-size: 1rem; color: var(--text-secondary);">(PvP)</span></h2>
+                <div class="game-score">X Wins: ${stats.xWins || 0} | O Wins: ${stats.oWins || 0} | Draws: ${stats.draws || 0}</div>
             </div>
             <div class="ttt-board" id="ttt-board"></div>
-            <div class="ttt-status" id="ttt-status">Player X's Turn</div>
+            <div class="ttt-status" id="ttt-status">
+                Current Turn: <span class="player-indicator player-x">Player X</span>
+            </div>
             <button class="ttt-reset-btn">New Game</button>
             <button class="back-btn">Back to Lobby (ESC)</button>
         `;
@@ -31,17 +33,18 @@ class TicTacToe {
     renderBoard() {
         const boardEl = document.getElementById('ttt-board');
         boardEl.innerHTML = '';
-        
+
         for (let i = 0; i < 9; i++) {
             const cell = document.createElement('div');
             cell.className = 'ttt-cell';
             cell.dataset.index = i;
-            cell.textContent = this.board[i] || '';
-            
+
             if (this.board[i]) {
+                cell.textContent = this.board[i];
                 cell.classList.add('filled');
+                cell.classList.add(this.board[i] === 'X' ? 'cell-x' : 'cell-o');
             }
-            
+
             boardEl.appendChild(cell);
         }
     }
@@ -58,13 +61,13 @@ class TicTacToe {
 
         document.addEventListener('keydown', (e) => {
             if (this.container.classList.contains('hidden')) return;
-            
+
             const numpadMap = {
                 'Numpad7': 0, 'Numpad8': 1, 'Numpad9': 2,
                 'Numpad4': 3, 'Numpad5': 4, 'Numpad6': 5,
                 'Numpad1': 6, 'Numpad2': 7, 'Numpad3': 8
             };
-            
+
             if (numpadMap[e.code] !== undefined) {
                 this.makeMove(numpadMap[e.code]);
             }
@@ -73,32 +76,31 @@ class TicTacToe {
 
     makeMove(index) {
         if (this.gameOver || this.board[index]) return;
-        
+
+        // 1. Update Board State
         this.board[index] = this.currentPlayer;
         soundController.playClick();
         this.renderBoard();
-        
+
+        // 2. Check Win/Draw
         const winner = this.checkWinner();
         if (winner) {
             this.endGame(winner);
         } else if (this.board.every(cell => cell !== null)) {
             this.endGame('draw');
         } else {
+            // 3. Switch Turn
             this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
-            document.getElementById('ttt-status').textContent = `Player ${this.currentPlayer}'s Turn`;
-            
-            if (this.currentPlayer === 'O') {
-                setTimeout(() => this.aiMove(), 500);
-            }
+            this.updateStatus();
         }
     }
 
-    aiMove() {
-        const empty = this.board.map((cell, i) => cell === null ? i : null).filter(i => i !== null);
-        if (empty.length > 0) {
-            const move = empty[Math.floor(Math.random() * empty.length)];
-            this.makeMove(move);
-        }
+    updateStatus() {
+        const statusEl = document.getElementById('ttt-status');
+        const playerClass = this.currentPlayer === 'X' ? 'player-x' : 'player-o';
+        const playerName = `Player ${this.currentPlayer}`;
+
+        statusEl.innerHTML = `Current Turn: <span class="player-indicator ${playerClass}">${playerName}</span>`;
     }
 
     checkWinner() {
@@ -107,7 +109,7 @@ class TicTacToe {
             [0, 3, 6], [1, 4, 7], [2, 5, 8],
             [0, 4, 8], [2, 4, 6]
         ];
-        
+
         for (const [a, b, c] of lines) {
             if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c]) {
                 this.highlightWinningLine([a, b, c]);
@@ -124,30 +126,34 @@ class TicTacToe {
 
     endGame(result) {
         this.gameOver = true;
-        const stats = stateManager.getGameState('ticTacToe');
-        
+        const stats = stateManager.getGameState('ticTacToePvP') || { xWins: 0, oWins: 0, draws: 0 };
+        const statusEl = document.getElementById('ttt-status');
+
         if (result === 'X') {
-            document.getElementById('ttt-status').textContent = 'You Win!';
-            stats.wins = (stats.wins || 0) + 1;
+            statusEl.innerHTML = '<span class="player-indicator player-x">Player X Wins!</span>';
+            stats.xWins = (stats.xWins || 0) + 1;
             soundController.playShimmer();
         } else if (result === 'O') {
-            document.getElementById('ttt-status').textContent = 'You Lose!';
-            stats.losses = (stats.losses || 0) + 1;
-            soundController.playGameOver();
+            statusEl.innerHTML = '<span class="player-indicator player-o">Player O Wins!</span>';
+            stats.oWins = (stats.oWins || 0) + 1;
+            soundController.playShimmer();
         } else {
-            document.getElementById('ttt-status').textContent = 'Draw!';
+            statusEl.textContent = 'Draw!';
             stats.draws = (stats.draws || 0) + 1;
         }
-        
-        stateManager.setGameState('ticTacToe', stats);
+
+        stateManager.setGameState('ticTacToePvP', stats);
+
+        // Update score display
+        document.querySelector('.game-score').textContent = `X Wins: ${stats.xWins || 0} | O Wins: ${stats.oWins || 0} | Draws: ${stats.draws || 0}`;
     }
 
     reset() {
         this.board = Array(9).fill(null);
-        this.currentPlayer = 'X';
+        this.currentPlayer = 'X'; // X starts
         this.gameOver = false;
         this.renderBoard();
-        document.getElementById('ttt-status').textContent = "Player X's Turn";
+        this.updateStatus();
         soundController.playClick();
     }
 }
