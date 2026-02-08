@@ -175,3 +175,6 @@ Just want to make my GitHub look less empty
 ### P.S. — If you found this helpful, treat yourself to a samosa. You earned it.
 
 </div>
+
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/0e4db4f9-fe50-4c2d-afec-213c46580161" />
+
