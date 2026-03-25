@@ -14,7 +14,7 @@ I wanted to prove that "import" is not the only thing developers know
 Zero frameworks. Zero BS. Just raw talent and Stack Overflow.
 
 ## 🔗 Live Demo
-Chal, khel ke dekh: 👉 [https://abhiraj7575.github.io/SHUNYA-Arcade/]
+Chal, khel ke dekh: 👉 [**शून्य**](https://abhiraj7575.github.io/SHUNYA-Arcade/)
 
 Agar link nahi khula, toh pehle apna Jio recharge karwa le bhai. 📶
 
